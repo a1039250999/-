@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>非凡娱乐 - 手游下载平台</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 顶部展示区 */
+        .header {
+            background: linear-gradient(to right, #ff4e50, #f9d423);
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        /* 中间文字描述区 */
+        .description {
+            background-color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .description h2 {
+            color: #ff4e50;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .description p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .assets {
+            background-color: #f9d423;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        /* 游戏下载区 */
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .game-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .game-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 5px;
+            float: left;
+        }
+        
+        .game-name {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 45px;
+        }
+        
+        .download-btn {
+            display: block;
+            background-color: #ff4e50;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-top: 10px;
+            clear: both;
+        }
+        
+        /* VIP和邀请好友区域 */
+        .vip-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        
+        .vip, .invite {
+            width: 48%;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .vip {
+            color: #f9d423;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+        }
+        
+        .invite {
+            color: #ff4e50;
+        }
+        
+        /* 底部联系信息 */
+        .contact {
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部展示区 -->
+    <div class="header">
+        <img src="header-image.jpg" alt="非凡娱乐" class="header-image">
+        非凡娱乐 - 手游下载平台
+    </div>
+    
+    <!-- 中间文字描述区 -->
+    <div class="description">
+        <h2>月入过刀教程</h2>
+        <p>邀请一名好友充值700以上可赚700-1400</p>
+        <p>上不封顶.达标自动发放到余额.不需要流水可直接提现</p>
+        
+        <div class="assets">
+            账户总资产 ￥84358.59
+        </div>
+    </div>
+    
+    <!-- VIP和邀请好友区域 -->
+    <div class="vip-section">
+        <div class="vip">VIP特权</div>
+        <div class="invite">邀请好友</div>
+    </div>
+    
+    <!-- 游戏下载区 - 3x3网格 -->
+    <div class="games-container">
+        <!-- 第一行 -->
+        <div class="game-card">
+            <img src="game1.jpg" alt="问鼎娱乐" class="game-image">
+            <div class="game-name">问鼎娱乐</div>
+            <a href="download-link1" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game2.jpg" alt="商宫28" class="game-image">
+            <div class="game-name">商宫28</div>
+            <a href="download-link2" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game3.jpg" alt="非凡娱乐" class="game-image">
+            <div class="game-name">非凡娱乐</div>
+            <a href="download-link3" class="download-btn">进入游戏</a>
+        </div>
+        
+        <!-- 第二行 -->
+        <div class="game-card">
+            <img src="game4.jpg" alt="问鼎" class="game-image">
+            <div class="game-name">问鼎</div>
+            <a href="download-link4" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game5.jpg" alt="商宫旗下APP" class="game-image">
+            <div class="game-name">商宫旗下APP</div>
+            <a href="download-link5" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game6.jpg" alt="全网主推提" class="game-image">
+            <div class="game-name">全网主推提</div>
+            <a href="download-link6" class="download-btn">进入游戏</a>
+        </div>
+        
+        <!-- 第三行 -->
+        <div class="game-card">
+            <img src="game7.jpg" alt="十年老台提" class="game-image">
+            <div class="game-name">十年老台提</div>
+            <a href="download-link7" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game8.jpg" alt="新台大水" class="game-image">
+            <div class="game-name">新台大水</div>
+            <a href="download-link8" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="game9.jpg" alt="款迅速" class="game-image">
+            <div class="game-name">款迅速</div>
+            <a href="download-link9" class="download-btn">进入游戏</a>
+        </div>
+    </div>
+    
+    <!-- 底部联系信息 -->
+    <div class="contact">
+        好友最高可得1500/1个。祝各位玩家一！<br>
+        联系旺旺：5686712 QQ：2<br>
+        招收抖音评论代发兼职！！！
+    </div>
+</body>
+</html>

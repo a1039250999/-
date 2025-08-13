@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 基础元信息 -->
+    <meta charset="UTF-8">
+    <!-- 关键视口设置：固定宽度为375px(类似iPhone 6/7/8尺寸)，禁止缩放 -->
+    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0">
+    <title>非凡娱乐 - 祝老板一路长虹</title>
+    <style>
+        /* 全局重置样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* 确保元素尺寸包含边框和内边距 */
+            font-family: "Microsoft YaHei", sans-serif; /* 使用微软雅黑字体 */
+        }
+        
+        /* 基础页面样式 */
+        body {
+            width: 375px; /* 固定页面宽度 */
+            background-color: #f5f5f5; /* 浅灰色背景 */
+            color: #333; /* 主文字颜色 */
+            line-height: 1.6; /* 行高设置 */
+            overflow-x: hidden; /* 隐藏水平滚动条 */
+        }
+        
+        /* 顶部展示区样式 */
+        .header {
+            background: linear-gradient(to right, #ff4e50, #f9d423); /* 红黄渐变背景 */
+            padding: 15px 10px; /* 内边距 */
+            text-align: center; /* 文字居中 */
+            color: white; /* 白色文字 */
+            font-weight: bold; /* 加粗 */
+            font-size: 18px; /* 字体大小 */
+        }
+        
+        /* 顶部图片样式 */
+        .header-image {
+            width: 355px; /* 固定宽度 */
+            height: 160px; /* 固定高度 */
+            margin-bottom: 10px; /* 底部外边距 */
+            border-radius: 5px; /* 圆角 */
+            object-fit: cover; /* 图片填充方式 */
+        }
+        
+        /* 中间文字描述区样式 */
+        .description {
+            background-color: white; /* 白色背景 */
+            padding: 15px; /* 内边距 */
+            margin: 10px; /* 外边距 */
+            border-radius: 5px; /* 圆角 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影效果 */
+        }
+        
+        /* 描述标题样式 */
+        .description h2 {
+            color: #ff4e50; /* 红色标题 */
+            margin-bottom: 10px; /* 底部外边距 */
+            font-size: 13px; /* 字体大小 */
+        }
+        
+        /* 描述段落样式 */
+        .description p {
+            font-size: 14px; /* 字体大小 */
+            margin-bottom: 8px; /* 底部外边距 */
+        }
+        
+        /* 账户资产显示区样式 */
+        .assets {
+            background-color: #f9d423; /* 黄色背景 */
+            color:; /* 深色文字 */
+            padding: 10px; /* 内边距 */
+            text-align: center; /* 文字居中 */
+            font-weight: bold; /* 加粗 */
+            margin: 10px 0; /* 外边距 */
+            border-radius: 5px; /* 圆角 */
+        }
+        
+        /* 游戏容器网格布局 - 3x3固定布局 */
+        .games-container {
+            display: grid; /* 使用网格布局 */
+            grid-template-columns: repeat(3, 115px); /* 3列，每列115px */
+            gap: 10px; /* 网格间隙 */
+            padding: 10px; /* 内边距 */
+            justify-content: center; /* 水平居中 */
+        }
+        
+        /* 单个游戏卡片样式 */
+        .game-card {
+            width: 115px; /* 固定宽度 */
+            height: 140px; /* 固定高度 */
+            background-color: white; /* 白色背景 */
+            border-radius: 5px; /* 圆角 */
+            padding: 8px; /* 内边距 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影效果 */
+            overflow: hidden; /* 隐藏溢出内容 */
+        }
+        
+        /* 游戏图片样式 */
+        .game-image {
+            width: 40px; /* 固定宽度 */
+            height: 40px; /* 固定高度 */
+            object-fit: cover; /* 图片填充方式 */
+            border-radius: 5px; /* 圆角 */
+            margin-right: 5px; /* 右外边距 */
+            float: left; /* 左浮动 */
+        }
+        
+        /* 游戏名称样式 */
+        .game-name {
+            font-size: 12px; /* 字体大小 */
+            font-weight: bold; /* 加粗 */
+            text-align: left; /* 左对齐 */
+            margin-left: 45px; /* 左外边距 */
+            height: 40px; /* 固定高度 */
+            display: flex; /* 弹性布局 */
+            align-items: center; /* 垂直居中 */
+        }
+        
+        /* 下载按钮样式 */
+        .download-btn {
+            display: block; /* 块级元素 */
+            background-color: #ff4e50; /* 红色背景 */
+            color: white; /* 白色文字 */
+            text-decoration: none; /* 去除下划线 */
+            padding: 8px 0; /* 内边距 */
+            border-radius: 3px; /* 圆角 */
+            font-size: 12px; /* 字体大小 */
+            margin-top: 10px; /* 顶部外边距 */
+            clear: both; /* 清除浮动 */
+            text-align: center; /* 文字居中 */
+        }
+        
+        /* VIP和邀请好友区域容器 */
+        .vip-section {
+            display: flex; /* 弹性布局 */
+            justify-content: space-between; /* 两端对齐 */
+            margin: 10px; /* 外边距 */
+        }
+        
+        /* VIP区域样式 */
+        .vip {
+            width: 48%; /* 宽度占比 */
+            background: linear-gradient(to right, #8e2de2, #4a00e0); /* 紫色渐变 */
+            padding: 10px; /* 内边距 */
+            border-radius: 5px; /* 圆角 */
+            text-align: center; /* 文字居中 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影效果 */
+            font-size: 14px; /* 字体大小 */
+            font-weight: bold; /* 加粗 */
+            color: #f9d423; /* 黄色文字 */
+        }
+        
+        /* 邀请好友区域样式 */
+        .invite {
+            width: 48%; /* 宽度占比 */
+            background-color: white; /* 白色背景 */
+            padding: 10px; /* 内边距 */
+            border-radius: 5px; /* 圆角 */
+            text-align: center; /* 文字居中 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影效果 */
+            font-size: 14px; /* 字体大小 */
+            font-weight: bold; /* 加粗 */
+            color: #ff4e50; /* 红色文字 */
+        }
+        
+        /* 底部联系信息样式 */
+        .contact {
+            font-size: 12px; /* 字体大小 */
+            text-align: center; /* 文字居中 */
+            padding: 10px; /* 内边距 */
+            color: #666; /* 灰色文字 */
+            margin-bottom: 20px; /* 底部外边距 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部展示区：包含标题和展示图片 -->
+    <div class="header">
+        <!-- 顶部展示图片（需要替换为实际图片路径） -->
+        <img src="gg.jpg" alt="非凡娱乐" class="header-image">
+    </div>
+    
+    <!-- 中间文字描述区：包含收入教程和账户信息 -->
+    <div class="description">
+                <div class="assets">
+            注册绑定送28，累存达标600反300
+        </div>
+        <h2>累存按每月上旬(1~10号)，中旬(11~20号)，下旬(21~月底) 期间累存计算，超时重计</h2>
+
+    </div>
+    
+    <!-- VIP和邀请好友区域：两个并排按钮 -->
+    <div class="vip-section">
+        <div class="vip">推荐平台</div>
+    </div>
+    
+    <!-- 游戏下载区：3x3网格布局 -->
+    <div class="games-container">
+        <!-- 第一行游戏 -->
+        <div class="game-card">
+            <!-- 游戏图片（需要替换为实际图片路径） -->
+            <img src="zt.png" alt="问鼎娱乐" class="game-image">
+            <div class="game-name">征途国际</div>
+            <!-- 下载链接（需要替换为实际下载地址） -->
+            <a href="https://wcwx.paradisemall.net/app/register.php?site_id=1031&topId=3349385" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="cf.png" alt="商宫28" class="game-image">
+            <div class="game-name">超凡国际</div>
+            <a href="https://wcwx.paradisemall.net/app/register.php?site_id=1032&topId=2023608" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="df.png" alt="非凡娱乐" class="game-image">
+            <div class="game-name">巅峰国际</div>
+            <a href="https://wcwx.paradisemall.net/app/register.php?site_id=1030&topId=3137251" class="download-btn">进入游戏</a>
+        </div>
+        
+        <!-- 第二行游戏 -->
+        <div class="game-card">
+            <img src="ng.png" alt="问鼎" class="game-image">
+            <div class="game-name">NG28</div>
+            <a href="https://23.235.160.179:7788/#/link?allwin=21963170" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="dmg.png" alt="商宫旗下APP" class="game-image">
+            <div class="game-name">大满贯</div>
+            <a href="https://tz.wx-gujdtq3.com/app/register.php?site_id=2228&topId=1263476" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="yh.png" alt="全网主推提" class="game-image">
+            <div class="game-name">壹号娱乐</div>
+            <a href="https://wcwx.paradisemall.net/app/register.php?site_id=800&topId=18917879" class="download-btn">进入游戏</a>
+        </div>
+        
+        <!-- 第三行游戏 -->
+        <div class="game-card">
+            <img src="wc.png" alt="十年老台提" class="game-image">
+            <div class="game-name">旺财28</div>
+            <a href="https://wcwx.paradisemall.net/app/register.php?site_id=1012&topId=3603559" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="28q.png" alt="新台大水" class="game-image">
+            <div class="game-name">28圈</div>
+            <a href="https://156.234.70.10:61108/#/link?allwin=10921528" class="download-btn">进入游戏</a>
+        </div>
+        
+        <div class="game-card">
+            <img src="sj.png" alt="款迅速" class="game-image">
+            <div class="game-name">赏金国际</div>
+            <a href="https://xjvueb.hefaship.com/app/register.php?site_id=1010&topId=3514959" class="download-btn">进入游戏</a>
+        </div>
+    </div>
+    
+    <!-- 底部联系信息 -->
+    <div class="contact">
+    <br>
+        联系旺旺：155639298<br>
+    </div>
+</body>
+</html>
